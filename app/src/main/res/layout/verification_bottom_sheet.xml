@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp"
+    android:id="@+id/verify_bottom_sheet_view"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="true"
+    style="@style/BottomSheetDialogTheme"
+    android:background="@drawable/filter_sheet"
+    android:focusable="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/filter_sheet">
+
+        <View
+            android:id="@+id/card_handle"
+            android:layout_width="48dp"
+            android:layout_height="5dp"
+            android:foregroundGravity="center"
+            android:background="@drawable/card_holder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/verify_icon"
+            android:layout_width="192dp"
+            android:layout_height="192dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintVertical_bias="0"
+            android:src="@drawable/verify_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/todo13" />
+
+        <TextView
+            android:id="@+id/verify_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="1dp"
+            android:alpha="0.8"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/verification_succeed"
+            android:textColor="@color/orange_main"
+            android:textSize="24sp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintTop_toBottomOf="@id/verify_icon" />
+
+        <TextView
+            android:id="@+id/verify_success_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="64dp"
+            android:alpha="0.8"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingTop="2dp"
+            android:paddingStart="48dp"
+            android:paddingEnd="48dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/verify_success"
+            android:text="@string/you_have_succesfully_add_new_asset_s_data_of_diklat"
+            android:textColor="@color/dark_main"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/nunito_bold"
+            android:padding="12dp"
+            android:text="@string/ok"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:elevation="16dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/verify_success_caption" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

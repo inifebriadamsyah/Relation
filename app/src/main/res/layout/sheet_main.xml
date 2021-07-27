@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_rounded_top"
+    app:layout_anchor="@id/appbar_main"
+    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/card_handle"
+        android:layout_width="44dp"
+        android:layout_height="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/card_holder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <TextView
+        android:id="@+id/recommendation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/our_recommendation"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/chip_group_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recommendation"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="20dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/group_of_chip"
+            tools:ignore="MissingConstraints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="20dp"
+            android:isScrollContainer="true"
+            app:singleLine="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_all"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/all"
+                android:textAppearance="@style/CustomChipStyle"
+                android:theme="@style/Theme.Relation"
+                app:chipEndPadding="14dp"
+                app:chipIconSize="18sp"
+                app:chipMinHeight="36dp"
+                app:chipStartPadding="14dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_hunger"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/hunger"
+                android:textSize="13sp"
+                android:theme="@style/Theme.Relation"
+                app:chipEndPadding="14dp"
+                app:chipIconSize="18sp"
+                app:chipMinHeight="36dp"
+                app:chipStartPadding="14dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_porverty"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/poverty"
+                android:textSize="13sp"
+                android:theme="@style/Theme.Relation"
+                app:chipEndPadding="14dp"
+                app:chipIconSize="18sp"
+                app:chipMinHeight="36dp"
+                app:chipStartPadding="14dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_education"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/education2"
+                android:textSize="13sp"
+                android:theme="@style/Theme.Relation"
+                app:chipEndPadding="14dp"
+                app:chipIconSize="18sp"
+                app:chipMinHeight="36dp"
+                app:chipStartPadding="14dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_health"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/health"
+                android:textSize="13sp"
+                android:theme="@style/Theme.Relation"
+                app:chipEndPadding="14dp"
+                app:chipIconSize="18sp"
+                app:chipMinHeight="36dp"
+                app:chipStartPadding="14dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_environment"
+                style="@style/CustomChipStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/environment"
+                android:textSize="13sp"
+                android:theme="@style/Theme.Relation"
+                app:chipEndPadding="14dp"
+                app:chipIconSize="18sp"
+                app:chipMinHeight="36dp"
+                app:chipStartPadding="14dp" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/eventRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chip_group_frame"
+        android:layout_marginTop="12dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="24dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/eventRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chip_group_frame"
+            android:layout_marginTop="12dp"
+            android:visibility="invisible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/emptyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/ic_undraw_empty" />
+
+        <TextView
+            android:id="@+id/text_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingStart="24dp"
+            android:paddingTop="24dp"
+            android:paddingEnd="24dp"
+            android:text="No data found"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/bg_shadow_up_to_down"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>

@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:id="@+id/filter_bottom_sheet_view"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="true"
+    android:paddingBottom="4dp"
+    android:orientation="vertical"
+    style="@style/BottomSheetDialogTheme"
+    android:background="@drawable/filter_sheet"
+    tools:context=".FilterActivity"
+    android:focusable="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/main_filter"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp">
+
+            <View
+                android:id="@+id/card_handle"
+                android:layout_width="40dp"
+                android:layout_height="5dp"
+
+                android:background="@drawable/card_holder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="36dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/add_a_filter"
+                    android:textColor="@color/orange_main"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="28dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/todo12"
+                    android:elevation="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:src="@drawable/reset" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sorting_by"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="102dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/sorting_by"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sorting_by"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:orientation="horizontal"
+                    android:textSize="20sp"
+                    android:id="@+id/sorting_by_group">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/sort_chip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            app:chipStrokeWidth="1dp"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Registration Time"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Closest Location"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:layout_marginTop="24dp"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Most Suitable"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+
+
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="36dp"
+                    android:id="@+id/location_"
+                    android:layout_below="@id/sorting_by_group"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/location"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="44dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="28dp"
+                    android:layout_below="@id/sorting_by_group"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textColor="@color/orange_main"
+                    android:text="See All"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_below="@id/location_"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/location_group"
+                    android:textSize="20sp">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Jakarta"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Surabaya"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Malang"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Yogyakarta"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Bandung"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Padang"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+
+
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="36dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/category"
+                    android:id="@+id/category_"
+                    android:layout_below="@id/location_group"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="44dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="28dp"
+                    android:layout_below="@id/location_group"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textColor="@color/orange_main"
+                    android:text="See All"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/category_"
+                    android:textSize="20sp">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/group_of_chip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Poverty"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Hunger"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Education"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Environment"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+                        <com.google.android.material.chip.Chip
+                            style="@style/FilterCustomChipStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:text="Health"
+                            android:textAppearance="@style/FilterCustomChipStyle"
+                            android:theme="@style/Theme.Relation"
+                            app:chipEndPadding="18dp"
+                            app:chipIconSize="18sp"
+                            app:chipMinHeight="38dp"
+                            app:chipStartPadding="18dp" />
+
+                    </com.google.android.material.chip.ChipGroup>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="108dp"
+        android:layout_alignParentBottom="true">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/filter_cancel"
+            android:layout_width="172dp"
+            android:stateListAnimator="@null"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:elevation="0dp"
+            android:fontFamily="@font/nunito_bold"
+            android:padding="16dp"
+            android:background="@drawable/gray_button"
+            android:layout_alignParentStart="true"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/gray_main"
+            android:alpha="0.9"
+            android:textSize="18sp" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/filter_confirm"
+            android:stateListAnimator="@null"
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:elevation="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button"
+            app:elevation="0dp"
+            android:fontFamily="@font/nunito_bold"
+            android:padding="16dp"
+            android:text="Done"
+            android:textAllCaps="false"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+</RelativeLayout>

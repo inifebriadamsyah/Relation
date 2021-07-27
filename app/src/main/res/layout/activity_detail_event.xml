@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:theme="@style/Theme.Relation">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="58dp">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/coordinatorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Note: A RecyclerView can also be used -->
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <!--
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                app:layout_constraintBottom_toBottomOf="@id/main_detail_information"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0">
+
+            </androidx.viewpager.widget.ViewPager>
+            -->
+
+            <com.smarteist.autoimageslider.SliderView
+                app:layout_constraintBottom_toBottomOf="@id/main_detail_information"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0"
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                app:sliderAnimationDuration="300"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="#5A5A5A"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="1"
+                app:sliderStartAutoCycle="true" >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:foreground="@drawable/black_image_overlay"
+                    android:src="@drawable/breeze"
+                    android:scaleType="centerCrop"/>
+
+            </com.smarteist.autoimageslider.SliderView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/main_detail_information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="324dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="36dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                    <View
+                        android:id="@+id/card_handle"
+                        android:layout_width="48dp"
+                        android:layout_height="5dp"
+                        android:background="@drawable/card_holder"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.035" />
+
+                    <TextView
+                        android:id="@+id/event_detail_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:alpha="0.6"
+                        android:fontFamily="@font/nunito_extrabold"
+                        android:text="@string/event_name"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/card_handle"
+                        app:layout_constraintVertical_bias="0.075" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/horizontalScrollView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:scrollbars="none"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/event_detail_name">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/group_of_chip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:isScrollContainer="true"
+                            app:singleLine="true"
+                            tools:ignore="MissingConstraints">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_hunger"
+                                style="@style/CustomChipStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/nunito_semibold"
+                                android:text="@string/hunger"
+                                android:textSize="12sp"
+                                android:theme="@style/Theme.Relation"
+                                app:chipEndPadding="14dp"
+                                app:chipIconSize="18sp"
+                                app:chipMinHeight="28dp"
+                                app:chipStartPadding="14dp" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_porverty"
+                                style="@style/CustomChipStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/nunito_semibold"
+                                android:text="@string/poverty"
+                                android:textSize="12sp"
+                                android:theme="@style/Theme.Relation"
+                                app:chipEndPadding="14dp"
+                                app:chipIconSize="18sp"
+                                app:chipMinHeight="28dp"
+                                app:chipStartPadding="14dp" />
+
+                        </com.google.android.material.chip.ChipGroup>
+                    </HorizontalScrollView>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="4dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center_vertical"
+                            android:contentDescription="@string/todo3"
+                            android:padding="2dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/location" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="24dp"
+                            android:alpha="0.8"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="@string/event_location"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="132dp"
+                        android:layout_marginTop="12dp"
+                        android:padding="12dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:cardBackgroundColor="@color/mild_orange"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                        tools:layout_editor_absoluteX="20dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="22dp"
+                            android:src="@drawable/google" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nunito_extrabold"
+                            android:text="@string/gerakan_peduli_kemanusian"
+                            android:textColor="@color/orange_main"
+                            android:textSize="18sp"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginStart="78dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="42dp"
+                            android:layout_marginStart="79dp"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="@string/surabaya"
+                            android:textColor="@color/gray_main"
+                            android:textSize="14sp"
+                            />
+
+                        <ImageView
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_gravity="center_vertical"
+                            android:contentDescription="@string/todo2"
+                            android:padding="2dp"
+                            android:layout_marginTop="28dp"
+                            android:layout_marginStart="78dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/participione" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="28dp"
+                            android:alpha="0.8"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="@string/_128_participants"
+                            android:textSize="16sp"
+                            android:layout_marginTop="28dp"
+                            android:layout_marginStart="128dp"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginBottom="24dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center_vertical"
+                            android:contentDescription="@string/todo2"
+                            android:padding="2dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/calendar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="28dp"
+                            android:alpha="0.8"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="@string/event_date"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center_vertical"
+                            android:contentDescription="@string/todo3"
+                            android:padding="2dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/time_square" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="24dp"
+                            android:alpha="0.8"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="@string/_19_00_wib"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/card_separate"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/lighter_gray_main"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main_detail_information" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:id="@+id/event_detail_tab"
+                android:layout_height="52dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_separate"
+                app:layout_constraintVertical_bias="0"
+                app:tabIndicatorColor="@color/orange_main"
+                app:tabSelectedTextColor="@color/orange_main">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/story" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/task_detail" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/event_detail_tab"
+                app:layout_constraintVertical_bias="0"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="24dp"
+                app:layout_constraintHorizontal_bias="0"
+                android:textSize="20sp"
+                android:fontFamily="@font/nunito_extrabold"
+                android:id="@+id/event_detail_description"
+                android:text="@string/description"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/event_detail_description"
+                app:layout_constraintVertical_bias="0"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintHorizontal_bias="0"
+                android:textSize="14sp"
+                android:fontFamily="@font/nunito_semibold"
+                android:lineHeight="20dp"
+                android:text="@string/description_real"
+                android:layout_marginBottom="108dp"
+                tools:targetApi="p" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:background="@android:color/transparent"
+            android:layout_height="wrap_content"
+            app:liftOnScroll="true">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                android:id="@+id/detail_event_appbar"
+                android:layout_height="match_parent"
+                android:paddingTop="12dp"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                android:paddingBottom="6dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintHorizontal_bias="0"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_back"
+                        android:id="@+id/back_to_main"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sharing"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_share"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/join"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/button"
+        android:elevation="16dp"
+        android:fontFamily="@font/nunito_bold"
+        android:padding="12dp"
+        android:shadowDx="0"
+        android:shadowDy="16"
+        android:shadowRadius="32"
+        android:text="@string/join"
+        style="@style/Theme.Relation"
+        android:textAllCaps="false"
+        android:layout_marginBottom="24dp"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+</RelativeLayout>

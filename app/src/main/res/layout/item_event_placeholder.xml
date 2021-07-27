@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/first_card"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="28dp"
+    android:layout_marginEnd="20dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardElevation="0dp"
+    tools:context=".EventCardActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/event_image1"
+        android:layout_width="wrap_content"
+        android:layout_height="112dp"
+        android:background="@drawable/rounded_images"
+        android:scaleType="centerCrop"
+        android:src="@drawable/breeze"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/category_in_card"
+        android:fontFamily="@font/nunito_bold"
+        android:paddingLeft="9dp"
+        android:paddingTop="6dp"
+        android:paddingRight="9dp"
+        android:paddingBottom="6dp"
+        android:id="@+id/eventCategory"
+        android:text="@string/education"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/eventName"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginRight="4dp"
+        android:alpha="0.6"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/event_name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginRight="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/todo1"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/google" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:alpha="0.8"
+            android:id="@+id/eventHolder"
+            android:fontFamily="@font/nunito_semibold"
+            android:text="@string/event_admin"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginRight="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/todo2"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/calendar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            android:id="@+id/eventTime"
+            android:alpha="0.8"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/event_date"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/todo3"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/location" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            android:alpha="0.8"
+            android:id="@+id/eventLocation"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/event_location"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

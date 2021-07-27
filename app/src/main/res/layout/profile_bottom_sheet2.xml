@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:id="@+id/filter_bottom_sheet_view"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="true"
+    android:paddingBottom="4dp"
+    android:orientation="vertical"
+    style="@style/BottomSheetDialogTheme"
+    android:background="@drawable/filter_sheet"
+    android:focusable="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/main_filter"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="38dp">
+
+            <View
+                android:id="@+id/card_handle"
+                android:layout_width="40dp"
+                android:layout_height="5dp"
+                android:background="@drawable/card_holder"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="matrix"
+                android:src="@drawable/bgstwo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/main_profile_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="28dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_handle"
+                app:layout_constraintVertical_bias="0.1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/profile_photo"
+                    android:layout_width="114dp"
+                    android:layout_height="114dp"
+                    android:layout_centerHorizontal="true"
+                    app:cardCornerRadius="512dp">
+
+                    <ImageView
+                        android:layout_width="108dp"
+                        android:layout_height="108dp"
+                        android:layout_gravity="center"
+                        android:elevation="4dp"
+                        android:src="@drawable/chuuuu" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="102dp"
+                    android:background="@color/orange_main"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="512dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/level_card"
+                        android:fontFamily="@font/nunito_extrabold"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="2dp"
+                        android:text="Lvl. 10"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_photo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:text="Kim Jiwoo"
+                    android:textColor="@color/orange_main"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/profile_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profile_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:alpha="0.7"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="thechuukumiest@bbc.co.kr"
+                    android:textSize="12sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="108dp"
+                    android:layout_height="38dp"
+                    android:layout_below="@id/profile_email"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/border_button_new"
+                    android:drawableLeft="@drawable/ic_another_logout"
+                    android:elevation="0dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="0dp"
+                    android:stateListAnimator="@null"
+                    android:text="   Log Out"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_main"
+                    android:textSize="11sp" />
+
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@id/profile_photo"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_toRightOf="@id/profile_name"
+                    android:alpha="0.8"
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/edit" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/card_separate"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/lighter_gray_main"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_profile_card" />
+
+            <TextView
+                android:id="@+id/joined_events"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="28dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Joined Events"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_separate" />
+
+            <HorizontalScrollView
+                android:id="@+id/joined_events_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/joined_events">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="48dp"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <include layout="@layout/item_another_event_placeholder" />
+
+                    <include layout="@layout/item_another_event_placeholder" />
+
+                    <include layout="@layout/item_another_event_placeholder" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</RelativeLayout>

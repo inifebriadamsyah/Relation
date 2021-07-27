@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="24dp"
+    tools:context=".SearchActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/search_appbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp"
+        app:elevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp">
+
+            <ImageButton
+                android:id="@+id/search_back"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="24dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/basic_back" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/main_searchbar"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/gray_textfield"
+                android:layout_centerVertical="true"
+                android:focusable="true"
+                android:theme="@style/Theme.Relation"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@android:color/transparent"
+                app:queryHint="Search here" />
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <View
+        android:id="@+id/first_separate"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:alpha="0.5"
+        android:layout_centerHorizontal="true"
+        android:background="@color/mild_gray"
+        android:layout_below="@id/search_appbar_main" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:id="@+id/search_history"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/first_separate">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <View
+        android:id="@+id/second_separate"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:alpha="0.5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@color/mild_gray"
+        android:layout_below="@id/search_history" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/second_separate">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="Search suggestions"
+            android:textSize="20sp"
+            android:id="@+id/search_suggestion"
+            android:fontFamily="@font/nunito_bold"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search_suggestion"
+            android:orientation="horizontal"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="20sp">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/sort_chip"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.chip.Chip
+                    style="@style/CustomChipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/hunger"
+                    android:textSize="13sp"
+                    android:theme="@style/Theme.Relation"
+                    app:chipEndPadding="14dp"
+                    app:chipIconSize="18sp"
+                    app:chipMinHeight="36dp"
+                    app:chipStartPadding="14dp" />
+
+                <com.google.android.material.chip.Chip
+
+                    style="@style/CustomChipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/poverty"
+                    android:textSize="13sp"
+                    android:theme="@style/Theme.Relation"
+                    app:chipEndPadding="14dp"
+                    app:chipIconSize="18sp"
+                    app:chipMinHeight="36dp"
+                    app:chipStartPadding="14dp" />
+
+                <com.google.android.material.chip.Chip
+
+                    style="@style/CustomChipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/education2"
+                    android:textSize="13sp"
+                    android:theme="@style/Theme.Relation"
+                    app:chipEndPadding="14dp"
+                    app:chipIconSize="18sp"
+                    app:chipMinHeight="36dp"
+                    app:chipStartPadding="14dp" />
+
+                <com.google.android.material.chip.Chip
+
+                    style="@style/CustomChipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/health"
+                    android:textSize="13sp"
+                    android:theme="@style/Theme.Relation"
+                    app:chipEndPadding="14dp"
+                    app:chipIconSize="18sp"
+                    app:chipMinHeight="36dp"
+                    app:chipStartPadding="14dp" />
+
+                <com.google.android.material.chip.Chip
+
+                    style="@style/CustomChipStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/environment"
+                    android:textSize="13sp"
+                    android:theme="@style/Theme.Relation"
+                    app:chipEndPadding="14dp"
+                    app:chipIconSize="18sp"
+                    app:chipMinHeight="36dp"
+                    app:chipStartPadding="14dp" />
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

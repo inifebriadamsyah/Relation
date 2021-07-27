@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="348dp"
+    android:layout_height="200dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/first_card"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="164dp"
+            android:background="@android:color/transparent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/event_image2"
+                android:layout_width="wrap_content"
+                android:layout_height="164dp"
+                android:background="@android:color/transparent"
+                android:foreground="@drawable/white_image_overlay"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icebox"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
+
+            <TextView
+                android:id="@+id/promoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:alpha="0.75"
+                android:fontFamily="@font/nunito_extrabold"
+                android:gravity="center_horizontal"
+                android:text="Some kind of event"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/promoDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="36dp"
+                android:alpha="0.65"
+                android:fontFamily="@font/nunito_regular"
+                android:gravity="center_horizontal"
+                android:text="some kind of event has some funny documentation I dont know what to say"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                tools:ignore="RtlCompat" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>
+
