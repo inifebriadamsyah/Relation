@@ -14,134 +14,166 @@
     app:cardElevation="0dp"
     tools:context=".EventCardActivity">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/event_image1"
-        android:layout_width="wrap_content"
-        android:layout_height="112dp"
-        android:background="@drawable/rounded_images"
-        android:scaleType="centerCrop"
-        android:src="@drawable/breeze"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/category_in_card"
-        android:fontFamily="@font/nunito_bold"
-        android:paddingLeft="9dp"
-        android:paddingTop="6dp"
-        android:paddingRight="9dp"
-        android:paddingBottom="6dp"
-        android:id="@+id/eventCategory"
-        android:text="@string/education"
-        android:textColor="@color/white"
-        android:textSize="12sp" />
-
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:id="@+id/eventName"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="118dp"
-        android:layout_marginRight="4dp"
-        android:alpha="0.6"
-        android:fontFamily="@font/nunito_bold"
-        android:text="@string/event_name"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginRight="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_gravity="center_vertical"
-            android:contentDescription="@string/todo1"
-            android:padding="2dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/google" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/event_image1"
+            android:layout_width="wrap_content"
+            android:layout_height="112dp"
+            android:background="@drawable/rounded_images"
+            android:scaleType="centerCrop"
+            android:src="@drawable/breeze"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:alpha="0.8"
-            android:id="@+id/eventHolder"
-            android:fontFamily="@font/nunito_semibold"
-            android:text="@string/event_admin"
-            android:textSize="13sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginRight="4dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_gravity="center_vertical"
-            android:contentDescription="@string/todo2"
-            android:padding="2dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/calendar" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="24dp"
-            android:id="@+id/eventTime"
-            android:alpha="0.8"
+            android:background="@drawable/category_in_card"
             android:fontFamily="@font/nunito_bold"
-            android:text="@string/event_date"
-            android:textSize="13sp" />
+            android:paddingLeft="9dp"
+            android:paddingTop="6dp"
+            android:paddingRight="9dp"
+            android:paddingBottom="6dp"
+            android:id="@+id/eventCategory"
+            android:text="@string/education"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
 
-        <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_gravity="center_vertical"
-            android:contentDescription="@string/todo3"
-            android:padding="2dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/location" />
+        <RelativeLayout
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/checkbox_bg">
+
+
+            <CheckBox
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:id="@+id/heartea"
+                android:button="@drawable/sl_favourite_24dp"
+                app:buttonTint="@android:color/white"
+                android:layout_marginLeft="5.5dp"
+                android:layout_centerHorizontal="false"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+
 
         <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/eventName"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="118dp"
+            android:layout_marginRight="4dp"
+            android:alpha="0.6"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/event_name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="24dp"
-            android:alpha="0.8"
-            android:id="@+id/eventLocation"
-            android:fontFamily="@font/nunito_bold"
-            android:text="@string/event_location"
-            android:textSize="13sp" />
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="148dp"
+            android:layout_marginRight="4dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </LinearLayout>
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/todo1"
+                android:padding="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/google" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:alpha="0.8"
+                android:id="@+id/eventHolder"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/event_admin"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginRight="4dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/todo2"
+                android:padding="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/calendar" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="24dp"
+                android:id="@+id/eventTime"
+                android:alpha="0.8"
+                android:fontFamily="@font/nunito_bold"
+                android:text="@string/event_date"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/todo3"
+                android:padding="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/location" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="24dp"
+                android:alpha="0.8"
+                android:id="@+id/eventLocation"
+                android:fontFamily="@font/nunito_bold"
+                android:text="@string/event_location"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
 </com.google.android.material.card.MaterialCardView>
