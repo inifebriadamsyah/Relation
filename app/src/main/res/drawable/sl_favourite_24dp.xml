@@ -6,6 +6,7 @@
         />
     <item
         android:drawable="@drawable/heart_filled"
+        android:color="@color/red_main"
         android:state_checked="true"
         />
     <item android:drawable="@drawable/heart_outline" />

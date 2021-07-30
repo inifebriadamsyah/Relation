@@ -12,7 +12,7 @@
     android:clickable="true"
     android:focusable="true"
     app:cardElevation="0dp"
-    tools:context=".EventCardActivity">
+    tools:context=".EventCardFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -54,12 +54,12 @@
             android:background="@drawable/checkbox_bg">
 
 
-            <CheckBox
+            <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:id="@+id/heartea"
                 android:button="@drawable/sl_favourite_24dp"
-                app:buttonTint="@android:color/white"
+                app:useMaterialThemeColors="false"
                 android:layout_marginLeft="5.5dp"
                 android:layout_centerHorizontal="false"
                 android:layout_centerVertical="true"/>
