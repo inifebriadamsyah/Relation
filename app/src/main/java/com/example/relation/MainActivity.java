@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,8 +20,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
+import static android.content.ContentValues.TAG;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements EventAdapter.OnNoteListener {
 
 
     MaterialCardView filterImageButton;
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         addData();
 
         eventRecyclerView = (RecyclerView) findViewById(R.id.eventRecyclerView);
-        eventAdapter = new EventAdapter(eventArrayList);
+        eventAdapter = new EventAdapter(eventArrayList, this);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
 
@@ -98,6 +100,15 @@ public class MainActivity extends AppCompatActivity {
         final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(MainActivity.this, R.style.BottomSheetDialogTheme);
         bottomSheetDialog.setContentView(bottomFilterSheet);
         bottomSheetDialog.show();
+    }
+
+    @Override
+    public void onNoteClick(int position) {
+        Log.d(TAG, "onNoteClick: clicked" + position);
+
+        Intent intent = new Intent(this, DetailEventActivity.class);
+        intent.putExtra("Object", "something else");
+        startActivity(intent);
     }
 }
 

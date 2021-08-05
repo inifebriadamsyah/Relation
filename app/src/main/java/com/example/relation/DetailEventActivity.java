@@ -3,10 +3,13 @@ package com.example.relation;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
+
+import static android.content.ContentValues.TAG;
 
 public class DetailEventActivity extends Activity {
 
@@ -19,6 +22,8 @@ public class DetailEventActivity extends Activity {
 
         backButton = (ImageButton) findViewById(R.id.back_to_main);
         shareButton = (ImageButton) findViewById(R.id.sharing);
+
+        Log.d(TAG, "onCreate: called");
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
